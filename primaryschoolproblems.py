@@ -12,7 +12,6 @@ else:
      print('please write the name only latter s')
      exit()
 print()
-
 ids = int(input("can u please Enter your  school ID: "))
  
 if ids==12345:
@@ -24,7 +23,8 @@ if ids==12345:
                print(2,'prime/range of prime_numbers/nth prime number')
                print(3,'multiplications tables /add/sub/multiply/division')
                print(4,'factrizations/divisers/sum of numbers and digits')
-               print(5,'strong number/ amstrong number')
+               print(5,'strong number/ amstrong number/perfect number/pelindrome')
+               print(6,'fibbnical series/LCD/GCD numbers')
                print(0,'exit')
                print()
                n=int(input('choose the option above the blanks:'))
@@ -47,7 +47,7 @@ if ids==12345:
                          print()
                          print(1,'even/odd number ')
                          print(2,'range of even/odd number')
-                         print(3,'exit')
+                         print(0,'exit')
                          print()
                          k=int(input('choose the option wt u check :'))
                          if k==1:
@@ -125,26 +125,26 @@ if ids==12345:
                          print()
                          print('if u want to check plzz choose the options if u want to exits press option 5')
                          print()
-                         print(1,'prime or not')
-                         print(2,'range of the prime number')
-                         print(3,'nth prime numbers')
-                         print(4,'prime factors')
-                         print(5,'back')
+                         print(3,'prime or not')
+                         print(4,'range of the prime number')
+                         print(5,'nth prime numbers')
+                         print(6,'prime factors')
+                         print(0,'back')
                          print()
                          c=int(input('can u please choose the option s above blanks:'))
-                         if c==1:
+                         if c==3:
                               n=int(input('Can enter a number to check is it prime or not:'))
                               print()
                               prime(n)
-                         elif c==2:
+                         elif c==4:
                               m=int(input('please enter a number to check the range of prime number:'))
                               rangeofprime(m)
-                         elif c==3:
+                         elif c==5:
                               y=int(input('please enter a number nth prime number:'))
                               nthprime(y)
-                         elif c==5:
+                         elif c==0:
                               break
-                         elif c==4:
+                         elif c==6:
                               z=int(input('enter a prime factor number wt u want:'))
                               primefactor(z)
                          else:
@@ -152,13 +152,9 @@ if ids==12345:
                               h=input('if u want to check again press yes/no')
                               if h=='no':
                                    print('thank you for choosing ')
-                                   break
-
-                 
+                                   break                
                elif n==0:
-                         break
- 
-               
+                         break               
                elif n==3:
                     print()
                     print('****** wellcome to the tables world *******')
@@ -179,11 +175,9 @@ if ids==12345:
                          e=a//b
                          return c,',= module division of two number and : (',d,')= is the float division and :(',e,')= is the division of the two number',a,b
                     print()
-                    print('At a time we calculates like tables and (*,+,-,%,/) ')
                     n=int(input('please enter a tables number'))
                     tables(n)
                     print()
-                    print('can u plzz enter a two number in two inputs ex: 1 * 2(+,-,,) etc')
                     a=int(input('enter a first number:'))
                     b=int(input('enter a second number:'))
                     print()
@@ -229,28 +223,27 @@ if ids==12345:
                               b=b//10
                          print(s,'= is the sum of the digits of values =',p) 
                     while True:
-                         
                          print()
-                         print(1,'factrizations')
-                         print(2,'diviser')
-                         print(3,'sum of the range of number')
-                         print(4,'sum of the digits')
-                         print(5,'back')
+                         print(7,'factrizations')
+                         print(8,'diviser')
+                         print(9,'sum of the range of number')
+                         print(10,'sum of the digits')
+                         print(0,'back')
                          print()
                          x=int(input('choose the option wt u calculate:'))
-                         if x==1:
+                         if x==7:
                               n=int(input('can u plzz enter a number to check factors:'))
                               factrial(n)
-                         elif x==2:   
+                         elif x==8:   
                               m=int(input('plzz enter a number to check diviser:'))
                               diviser(m)
-                         elif x==3:                         
+                         elif x==9:                         
                               s=int(input('can u plzz enter a number to check sum ranges:'))
                               sumofnumbers(s)
-                         elif x==4:                                
+                         elif x==10:                                
                               p=int(input('enter a sum of digits vise:'))
                               sumofdigits(p)
-                         elif x==5:
+                         elif x==0:
                               break
                          else:
                               print('can u please choos the option s like 1/2/3/5 or 5:')
@@ -316,15 +309,108 @@ if ids==12345:
                               if s==i:
                                    print(i)
                               i=i+1
-                    n=int(input('enter a number'))
-                    k=stronge(n)
-                    print(k)
-                    p=int(input('enter a numbers'))
-                    rangeofstronge(p)
-                    q=int(input('enter a amstrong number'))
-                    amstronge(q)
-                    r=int(input('enter a rangeof amstrong'))
-                    rangeofamstronge(r)
+                    def perfect_num(e):
+                         s=0
+                         for i in range(1,e):
+                              if e%i==0:
+                                   s=s+i
+                         if s==e:
+                              print('perfect')
+                         else:
+                              print('not a perfect')
+                    def perfect_range(f):
+                         i=1
+                         while i<=f:
+                              n=i
+                              j=1
+                              s=0
+                              while j<n:
+                                   if n%j==0:
+                                        s=s+j
+                                   j=j+1
+                              if s==n:
+                                   print(n)
+                              i=i+1
+                    def pelindrome(g):
+                         rev=0
+                         n=g
+                         while g>0:
+                              d=g%10
+                              rev=rev*10+d
+                              g=g//10
+                         if rev==n:
+                              print('pelindrome')
+                         else:
+                              print('not a pelindrome')
+                    def rangepelindrome(h):
+                         i=1
+                         while i<=h:
+                              n=i
+                              org=n
+                              rev=0
+                              while n>0:
+                                   d=n%10
+                                   rev=rev*10+d
+                                   n=n//10
+                              if rev==org:
+                                   print(i)
+                              i=i+1                        
+                    while True:
+                         print()
+                         print(11,'strong number check')
+                         print(12,'Range of strong number')
+                         print(13,'Amstrong number')
+                         print(14,'Range of amstrong number checks')
+                         print(15,'perfect number or not')
+                         print(16,'range of perfect number')
+                         print(17,'pelindrome or not')
+                         print(18,'Range of pelindrome')
+                         print(0,'exit')
+                         s=int(input('Enter choice :'))
+                         if s==11:  
+                              n=int(input('enter a number to check is it strong/not :'))
+                              k=stronge(n)
+                              print(k)
+                         elif s==12:     
+                              p=int(input('enter a numbers to check range strong :'))
+                              rangeofstronge(p)
+                         elif s==13:  
+                              q=int(input('enter a amstrong number is it/didnt:'))
+                              amstronge(q)
+                         elif s==14:
+                              r=int(input('enter a range of amstrong :'))
+                              rangeofamstronge(r)
+                         elif s==0:
+                              print('exit')
+                              break
+                         elif s==15:
+                              t=int(input('enter a number to check is it perfect or not:'))
+                              perfect_num(t)
+                         elif s==16:
+                              q=int(input('enter a number to check range of perfect number:'))
+                              perfect_range(q)
+                         elif s==17:
+                              r=int(input('enter a number of to check pelindrome or not:'))
+                              pelindrome(r)
+                         elif s==18:
+                              s=int(input('enter a number of to check range of pelindrome:'))
+                              rangepelindrome(s)
+                              
+                         else:
+                              d=input('choose the option in 1/2/3/4/5 if u choose again press yes/no:').lower()
+                              if d=='no':
+                                   print('thank u')
+                                   break                             
 else:
      print('invalid id number :')
      exit()
+
+
+
+
+
+
+
+
+
+     
